@@ -1,0 +1,4 @@
+{
+  "include": ["magazine_editor", "tests"],
+  "extraPaths": ["."]
+}

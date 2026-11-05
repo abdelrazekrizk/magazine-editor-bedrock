@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "magazine-editor-agent"
+version = "0.1.0"
+description = "Local editorial review with deterministic and Strands/Bedrock workflows"
+readme = "README.md"
+requires-python = ">=3.14"
+license = "MIT"
+authors = [
+    {name = "Magazine Editor contributors"}
+]
+keywords = ["editorial-review", "magazine", "amazon-bedrock", "strands"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+    "boto3>=1.43.124",
+    "python-dotenv>=1.2.4",
+    "strands-agents>=1.64.0,<1.107.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.2.0",
+    "pytest-cov>=7.1.0",
+    "pytest-mock>=3.17.0",
+    "ruff>=0.17.3",
+    "flake8>=7.5.0",
+    "black>=26.10.1",
+    "mypy>=2.4.1",
+]
+testing = [
+    "pytest>=9.2.0",
+    "pytest-cov>=7.1.0",
+    "pytest-mock>=3.17.0",
+]
+
+[project.scripts]
+magazine-editor-review = "magazine_editor.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["magazine_editor*"]
+exclude = ["magazine_editor_workflow*", "sample_articles*", "tests*"]

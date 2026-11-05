@@ -1,0 +1,15 @@
+# Production Dependencies
+boto3>=1.43.124
+python-dotenv>=1.2.4
+strands-agents>=1.64.0,<1.107.0
+
+# Testing Dependencies
+pytest>=9.2.0
+pytest-cov>=7.1.0
+pytest-mock>=3.17.0
+
+# Code Quality
+ruff>=0.17.3
+flake8>=7.5.0
+black>=26.10.1
+mypy>=2.4.1

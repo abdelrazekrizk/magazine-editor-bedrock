@@ -1,0 +1,13 @@
+# Keep credentials and local environment data out of source control.
+.env
+.env.*
+!.env.example
+
+# Local Python and test artifacts.
+.venv/
+*.egg-info/
+.coverage
+.coverage.*
+**/__pycache__/
+.pytest_cache/
+test-results/
